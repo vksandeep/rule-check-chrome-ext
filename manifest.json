@@ -1,0 +1,35 @@
+{
+  "name": "Rule Checks",
+  "version": "1.0",
+  "description": "Sample Rule Check on Table",
+  "permissions": ["activeTab", "declarativeContent", "storage"],
+  "options_page": "options.html",
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "page_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/tasks-solid-16.png",
+      "32": "images/tasks-solid-32.png",
+      "48": "images/tasks-solid-48.png",
+      "128": "images/tasks-solid-128.png"
+    }
+  },
+  "icons": {
+    "16": "images/tasks-solid-16.png",
+    "32": "images/tasks-solid-32.png",
+    "48": "images/tasks-solid-48.png",
+    "128": "images/tasks-solid-128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/rulecheck/webpage.html"],
+      "css": ["tooltip.css"],
+      "js": ["contentScript.js"]
+    }
+  ],
+  "web_accessible_resources": ["tooltip.css"],
+  "manifest_version": 2
+}
